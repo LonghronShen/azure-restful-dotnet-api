@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azure.Restful.Provider", "Azure.Restful.Provider\Azure.Restful.Provider.csproj", "{7FF06A65-6244-497D-9BFF-ED91EEF1A24B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azure.Restful.Model", "Azure.Restful.Model\Azure.Restful.Model.csproj", "{6C4C3E18-B5A5-4D56-856C-D9AD00754D5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azure.Restful.Common", "Azure.Restful.Common\Azure.Restful.Common.csproj", "{569260F7-94E5-4503-AAEE-BFA47629A45F}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://ziztfs:8080/tfs/ccic%20cat
+		SccProjectUniqueName0 = Azure.Restful.Model\\Azure.Restful.Model.csproj
+		SccProjectName0 = Azure.Restful.Model
+		SccAuxPath0 = http://ziztfs:8080/tfs/ccic%20cat
+		SccLocalPath0 = Azure.Restful.Model
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = Azure.Restful.Common\\Azure.Restful.Common.csproj
+		SccProjectName1 = Azure.Restful.Common
+		SccAuxPath1 = http://ziztfs:8080/tfs/ccic%20cat
+		SccLocalPath1 = Azure.Restful.Common
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = Azure.Restful.Provider\\Azure.Restful.Provider.csproj
+		SccProjectName2 = Azure.Restful.Provider
+		SccAuxPath2 = http://ziztfs:8080/tfs/ccic%20cat
+		SccLocalPath2 = Azure.Restful.Provider
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		AzureWorldWide|Any CPU = AzureWorldWide|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Local|Any CPU = Local|Any CPU
+		OnPremise|Any CPU = OnPremise|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FF06A65-6244-497D-9BFF-ED91EEF1A24B}.AzureWorldWide|Any CPU.ActiveCfg = Release|Any CPU
+		{7FF06A65-6244-497D-9BFF-ED91EEF1A24B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FF06A65-6244-497D-9BFF-ED91EEF1A24B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FF06A65-6244-497D-9BFF-ED91EEF1A24B}.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{7FF06A65-6244-497D-9BFF-ED91EEF1A24B}.OnPremise|Any CPU.ActiveCfg = Release|Any CPU
+		{7FF06A65-6244-497D-9BFF-ED91EEF1A24B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FF06A65-6244-497D-9BFF-ED91EEF1A24B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C4C3E18-B5A5-4D56-856C-D9AD00754D5C}.AzureWorldWide|Any CPU.ActiveCfg = Release|Any CPU
+		{6C4C3E18-B5A5-4D56-856C-D9AD00754D5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C4C3E18-B5A5-4D56-856C-D9AD00754D5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C4C3E18-B5A5-4D56-856C-D9AD00754D5C}.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{6C4C3E18-B5A5-4D56-856C-D9AD00754D5C}.OnPremise|Any CPU.ActiveCfg = Release|Any CPU
+		{6C4C3E18-B5A5-4D56-856C-D9AD00754D5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C4C3E18-B5A5-4D56-856C-D9AD00754D5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{569260F7-94E5-4503-AAEE-BFA47629A45F}.AzureWorldWide|Any CPU.ActiveCfg = Release|Any CPU
+		{569260F7-94E5-4503-AAEE-BFA47629A45F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{569260F7-94E5-4503-AAEE-BFA47629A45F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{569260F7-94E5-4503-AAEE-BFA47629A45F}.Local|Any CPU.ActiveCfg = Release|Any CPU
+		{569260F7-94E5-4503-AAEE-BFA47629A45F}.OnPremise|Any CPU.ActiveCfg = Release|Any CPU
+		{569260F7-94E5-4503-AAEE-BFA47629A45F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{569260F7-94E5-4503-AAEE-BFA47629A45F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,573 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CreateAffinityGroup" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;CreateAffinityGroup Url="[service-endpoint]/[subscription-id]/affinitygroups" Method="POST"  xmlns="http://schemas.microsoft.com/windowsazure"&gt;
+    &lt;Name&gt;affinity-group-name&lt;/Name&gt;
+    &lt;Label&gt;base64-encoded-affinity-group-label&lt;/Label&gt;
+    &lt;Description&gt;affinity-group-description&lt;/Description&gt;
+    &lt;Location&gt;location&lt;/Location&gt;
+  &lt;/CreateAffinityGroup&gt;</value>
+  </data>
+  <data name="CreateDeployment" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;CreateDeployment Url="[service-endpoint]/[subscription-id]/services/hostedservices/{cloudservice-name}/deploymentslots/{deployment-slot}" Method="POST" xmlns="http://schemas.microsoft.com/windowsazure"&gt;
+  &lt;Name&gt;deployment-name&lt;/Name&gt;
+  &lt;PackageUrl&gt;package-url-in-blob-storage&lt;/PackageUrl&gt;
+  &lt;Label&gt;base64-encoded-deployment-label&lt;/Label&gt;
+  &lt;Configuration&gt;base64-encoded-configuration-file&lt;/Configuration&gt;
+  &lt;StartDeployment&gt;true|false&lt;/StartDeployment&gt;
+  &lt;TreatWarningsAsError&gt;true|false&lt;/TreatWarningsAsError&gt;
+  &lt;ExtendedProperties&gt;
+    &lt;ExtendedProperty&gt;
+      &lt;Name&gt;property-name&lt;/Name&gt;
+      &lt;Value&gt;property-value&lt;/Value&gt;
+    &lt;/ExtendedProperty&gt;
+  &lt;/ExtendedProperties&gt;
+  &lt;ExtensionConfiguration&gt;
+    &lt;AllRoles&gt;
+      &lt;Extension&gt;
+        &lt;Id&gt;identifier-of-extension&lt;/Id&gt;
+      &lt;/Extension&gt;
+    &lt;/AllRoles&gt;
+    &lt;NamedRoles&gt;
+      &lt;Role&gt;
+        &lt;RoleName&gt;role_name1&lt;/RoleName&gt;
+        &lt;Extensions&gt;
+          &lt;Extension&gt;
+            &lt;Id&gt;identifier-of-extension&lt;/Id&gt;
+          &lt;/Extension&gt;
+        &lt;/Extensions&gt;
+      &lt;/Role&gt;
+    &lt;/NamedRoles&gt;
+  &lt;/ExtensionConfiguration&gt;
+&lt;/CreateDeployment&gt;</value>
+  </data>
+  <data name="CreateHostedService" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;CreateHostedService Url="[service-endpoint]/[subscription-id]/services/hostedservices" Method="POST" xmlns="http://schemas.microsoft.com/windowsazure"&gt;
+  &lt;ServiceName&gt;service-name&lt;/ServiceName&gt;
+  &lt;Label From="HostedServiceProperties.Label"&gt;base64-encoded-service-label&lt;/Label&gt;
+  &lt;Description From="HostedServiceProperties.Description"&gt;description&lt;/Description&gt;
+  &lt;Location From="HostedServiceProperties.Location"&gt;location&lt;/Location&gt;
+  &lt;AffinityGroup From="HostedServiceProperties.AffinityGroup"&gt;affinity-group&lt;/AffinityGroup&gt;
+  &lt;ExtendedProperties From="HostedServiceProperties.ExtendedProperties"&gt;
+    &lt;ExtendedProperty&gt;
+      &lt;Name&gt;property-name&lt;/Name&gt;
+      &lt;Value&gt;property-value&lt;/Value&gt;
+    &lt;/ExtendedProperty&gt;
+  &lt;/ExtendedProperties&gt;
+&lt;/CreateHostedService&gt;</value>
+  </data>
+  <data name="CreateStorageService" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;CreateStorageServiceInput Url="[service-endpoint]/[subscription-id]/services/storageservices" Method="POST" xmlns="http://schemas.microsoft.com/windowsazure"&gt;
+  &lt;ServiceName&gt;service-name&lt;/ServiceName&gt;
+  &lt;Description From="StorageServiceProperties.Description"&gt;service-description&lt;/Description&gt;
+  &lt;Label From="StorageServiceProperties.Label"&gt;base64-encoded-label&lt;/Label&gt;
+  &lt;AffinityGroup From="StorageServiceProperties.AffinityGroup"&gt;affinity-group-name&lt;/AffinityGroup&gt;
+  &lt;Location From="StorageServiceProperties.Location"&gt;location-of-the-storage-account&lt;/Location&gt;
+  &lt;GeoReplicationEnabled From="StorageServiceProperties.GeoReplicationEnabled"&gt;[true|false]&lt;/GeoReplicationEnabled&gt;
+  &lt;ExtendedProperties&gt;
+    &lt;ExtendedProperty&gt;
+      &lt;Name&gt;property-name&lt;/Name&gt;
+      &lt;Value&gt;property-value&lt;/Value&gt;
+    &lt;/ExtendedProperty&gt;
+  &lt;/ExtendedProperties&gt;
+&lt;/CreateStorageServiceInput&gt;</value>
+  </data>
+  <data name="CreateVirtualMachine" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;PersistentVMRole Url="[service-endpoint]/[subscription-id]/services/hostedservices/{cloudservice-name}/deploymentslots/{deployment-slot}/{deployment-name}/roles" Method="POST" xmlns="http://schemas.microsoft.com/windowsazure"&gt;
+  &lt;RoleName&gt;name-of-the-virtual-machine&lt;/RoleName&gt;
+  &lt;RoleType&gt;PersistentVMRole&lt;/RoleType&gt;
+  &lt;ConfigurationSets&gt;
+    &lt;ConfigurationSet&gt;
+      &lt;ConfigurationSetType&gt;WindowsProvisioningConfiguration&lt;/ConfigurationSetType&gt;
+        &lt;ComputerName&gt;name-of-computer&lt;/ComputerName&gt;
+        &lt;AdminPassword&gt;administrator-password&lt;/AdminPassword&gt;
+        &lt;EnableAutomaticUpdates&gt;enable-updates&lt;/EnableAutomaticUpdates&gt;
+        &lt;TimeZone&gt;time-zone&lt;/TimeZone&gt;
+        &lt;DomainJoin&gt;
+          &lt;Credentials&gt;
+            &lt;Domain&gt;domain-to-join&lt;/Domain&gt;
+            &lt;Username&gt;user-name-in-the-domain&lt;/Username&gt;
+            &lt;Password&gt;password-for-the-user-name&lt;/Password&gt;
+          &lt;/Credentials&gt;
+          &lt;JoinDomain&gt;domain-to-join&lt;/JoinDomain&gt;
+          &lt;MachineObjectOU&gt;distinguished-name-of-the-ou&lt;/MachineObjectOU&gt;
+        &lt;/DomainJoin&gt;
+        &lt;StoredCertificateSettings&gt;
+          &lt;CertificateSetting&gt;
+            &lt;StoreLocation&gt;LocalMachine&lt;/StoreLocation&gt;
+            &lt;StoreName&gt;name-of-store-on-the-machine&lt;/StoreName&gt;
+            &lt;Thumbprint&gt;certificate-thumbprint&lt;/Thumbprint&gt;
+          &lt;/CertificateSetting&gt;
+        &lt;/StoredCertificateSettings&gt;
+        &lt;WinRM&gt;
+          &lt;Listeners&gt;
+            &lt;Listener&gt;
+              &lt;Protocol&gt;listener-protocol&lt;/Protocol&gt;
+            &lt;/Listener&gt;
+            &lt;Listener&gt;
+              &lt;CertificateThumbprint&gt;certificate-thumbprint&lt;/CertificateThumbprint&gt;
+              &lt;Protocol&gt;listener-protocol&lt;/Protocol&gt;
+            &lt;/Listener&gt;
+          &lt;/Listeners&gt;
+        &lt;/WinRM&gt;
+        &lt;AdminUsername&gt;name-of-administrator-account&lt;/AdminUsername&gt;
+      &lt;/ConfigurationSet&gt;
+    &lt;ConfigurationSet&gt;
+      &lt;ConfigurationSetType&gt;
+        LinuxProvisioningConfiguration&lt;/ConfigurationSetType&gt;
+        &lt;HostName&gt;host-name-for-the-virtual-machine&lt;/HostName&gt;
+        &lt;UserName&gt;new-user-name&lt;/UserName&gt;
+        &lt;UserPassword&gt;password-for-the-new-user&lt;/UserPassword&gt;
+        &lt;DisableSshPasswordAuthentication&gt;password-authentication&lt;/DisableSshPasswordAuthentication&gt;
+        &lt;SSH&gt;
+          &lt;PublicKeys&gt;
+            &lt;PublicKey&gt;
+              &lt;FingerPrint&gt;certificate-fingerprint&lt;/FingerPrint&gt;
+              &lt;Path&gt;SSH-public-key-storage-location&lt;/Path&gt;
+            &lt;/PublicKey&gt;
+          &lt;/PublicKeys&gt;
+          &lt;KeyPairs&gt;
+            &lt;KeyPair&gt;
+              &lt;FingerPrint&gt;certificate-fingerprint&lt;/FingerPrint&gt;
+              &lt;Path&gt;SSH-public-key-storage-location&lt;/Path&gt;
+            &lt;/KeyPair&gt;
+          &lt;/KeyPairs&gt;
+        &lt;/SSH&gt;
+      &lt;/ConfigurationSet&gt;
+    &lt;ConfigurationSet&gt;
+      &lt;ConfigurationSetType&gt;NetworkConfiguration&lt;/ConfigurationSetType&gt;
+      &lt;InputEndpoints&gt;
+        &lt;InputEndpoint&gt;
+          &lt;LoadBalancedEndpointSetName&gt;name-of-load-balanced-set&lt;/LoadBalancedEndpointSetName&gt;
+          &lt;LocalPort&gt;local-port-number&lt;/LocalPort&gt;
+          &lt;Name&gt;name-of-endpoint&lt;/Name&gt;
+          &lt;Port&gt;external-port-number&lt;/Port&gt;
+          &lt;LoadBalancerProbe&gt;
+            &lt;Path&gt;path-of-probe&lt;/Path&gt;
+            &lt;Port&gt;port-assigned-to-probe&lt;/Port&gt;
+            &lt;Protocol&gt;probe-protocol&lt;/Protocol&gt;
+            &lt;IntervalInSeconds&gt;interval-of-probe&lt;/IntervalInSeconds&gt;
+            &lt;TimeoutInSeconds&gt;timeout-for-probe&lt;/TimeoutInSeconds&gt;
+          &lt;/LoadBalancerProbe&gt;
+          &lt;Protocol&gt;endpoint-protocol&lt;/Protocol&gt;
+          &lt;EnableDirectServerReturn&gt;enable-direct-server-return&lt;/EnableDirectServerReturn&gt;
+          &lt;EndpointACL&gt;
+            &lt;Rules&gt;
+              &lt;Rule&gt;
+                &lt;Order&gt;priority-of-the-rule&lt;/Order&gt;
+                &lt;Action&gt;permit-rule&lt;/Action&gt;
+                &lt;RemoteSubnet&gt;subnet-of-the-rule&lt;/RemoteSubnet&gt;
+                &lt;Description&gt;description-of-the-rule&lt;/Description&gt;
+              &lt;/Rule&gt;
+            &lt;/Rules&gt;
+          &lt;/EndpointACL&gt;
+        &lt;/InputEndpoint&gt;
+      &lt;/InputEndpoints&gt;
+      &lt;SubnetNames&gt;
+        &lt;SubnetName&gt;name-of-subnet&lt;/SubnetName&gt;
+      &lt;/SubnetNames&gt;
+    &lt;/ConfigurationSet&gt;
+  &lt;/ConfigurationSets&gt;
+  &lt;AvailabilitySetName&gt;name-of-availability-set&lt;/AvailabilitySetName&gt;
+  &lt;DataVirtualHardDisks&gt;
+    &lt;DataVirtualHardDisk&gt;
+      &lt;HostCaching&gt;caching-mode&lt;/HostCaching&gt;
+      &lt;DiskLabel&gt;label-of-data-disk&lt;/DiskLabel&gt;
+      &lt;DiskName&gt;name-of-disk&lt;/DiskName&gt;
+      &lt;Lun&gt;logical-unit-number&lt;/Lun&gt;
+      &lt;LogicalDiskSizeInGB&gt;size-in-gb-of-data-disk&lt;/LogicalDiskSizeInGB&gt;
+      &lt;MediaLink&gt;path-to-vhd&lt;/MediaLink&gt;
+    &lt;/DataVirtualHardDisk&gt;
+  &lt;/DataVirtualHardDisks&gt;
+  &lt;OSVirtualHardDisk&gt;
+    &lt;HostCaching&gt;caching-mode&lt;/HostCaching&gt;
+    &lt;DiskLabel&gt;label-of-operating-system-disk&lt;/DiskLabel&gt;
+    &lt;DiskName&gt;name-of-disk&lt;/DiskName&gt;
+    &lt;MediaLink&gt;path-to-vhd&lt;/MediaLink&gt;
+    &lt;SourceImageName&gt;name-of-source-image&lt;/SourceImageName&gt;
+  &lt;/OSVirtualHardDisk&gt;
+  &lt;RoleSize&gt;size-of-virtual-machine&lt;/RoleSize&gt;
+&lt;/PersistentVMRole&gt;</value>
+  </data>
+  <data name="CreateVirtualMachineByDeployment" xml:space="preserve">
+    <value>&lt;Deployment xmlns="http://schemas.microsoft.com/windowsazure" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" Url="[service-endpoint]/[subscription-id]/services/hostedservices/{cloudservice-name}/deployments" Method="POST"&gt;
+  &lt;Name&gt;name-of-deployment&lt;/Name&gt;
+  &lt;DeploymentSlot&gt;deployment-environment&lt;/DeploymentSlot&gt;
+  &lt;Label&gt;identifier-of-deployment&lt;/Label&gt;      
+  &lt;RoleList&gt;
+    &lt;Role&gt;
+      &lt;RoleName&gt;name-of-the-virtual-machine&lt;/RoleName&gt;
+      &lt;RoleType&gt;PersistentVMRole&lt;/RoleType&gt;      
+      &lt;ConfigurationSets&gt;
+        &lt;ConfigurationSet&gt;
+          &lt;ConfigurationSetType&gt;WindowsProvisioningConfiguration&lt;/ConfigurationSetType&gt;
+          &lt;ComputerName&gt;name-of-computer&lt;/ComputerName&gt;
+          &lt;AdminPassword&gt;administrator-password&lt;/AdminPassword&gt; 
+          &lt;EnableAutomaticUpdates&gt;enable-updates&lt;/EnableAutomaticUpdates&gt;  
+          &lt;TimeZone&gt;time-zone&lt;/TimeZone&gt;
+          &lt;DomainJoin&gt;
+            &lt;Credentials&gt;
+              &lt;Domain&gt;domain-to-join&lt;/Domain&gt;
+              &lt;Username&gt;user-name-in-the-domain&lt;/Username&gt;
+              &lt;Password&gt;password-for-the-user-name&lt;/Password&gt;
+            &lt;/Credentials&gt;
+            &lt;JoinDomain&gt;domain-to-join&lt;/JoinDomain&gt;
+            &lt;MachineObjectOU&gt;distinguished-name-of-the-ou&lt;/MachineObjectOU&gt;
+          &lt;/DomainJoin&gt;
+          &lt;StoredCertificateSettings&gt;
+            &lt;CertificateSetting&gt;
+              &lt;StoreLocation&gt;LocalMachine&lt;/StoreLocation&gt;
+              &lt;StoreName&gt;name-of-store-on-the-machine&lt;/StoreName&gt;
+              &lt;Thumbprint&gt;certificate-thumbprint&lt;/Thumbprint&gt;
+            &lt;/CertificateSetting&gt;
+          &lt;/StoredCertificateSettings&gt;
+          &lt;WinRM&gt;
+            &lt;Listeners&gt;
+              &lt;Listener&gt;
+                &lt;Protocol&gt;listener-protocol&lt;/Protocol&gt;
+              &lt;/Listener&gt;
+              &lt;Listener&gt;
+                &lt;CertificateThumbprint&gt;certificate-thumbprint&lt;/CertificateThumbprint&gt;
+                &lt;Protocol&gt;listener-protocol&lt;/Protocol&gt;
+              &lt;/Listener&gt;
+            &lt;/Listeners&gt;
+          &lt;/WinRM&gt;
+          &lt;AdminUsername&gt;name-of-administrator-account&lt;/AdminUsername&gt;
+        &lt;/ConfigurationSet&gt;       
+        &lt;ConfigurationSet&gt; 
+          &lt;ConfigurationSetType&gt;NetworkConfiguration&lt;/ConfigurationSetType&gt;
+          &lt;InputEndpoints&gt;
+            &lt;InputEndpoint&gt;
+              &lt;LoadBalancedEndpointSetName&gt;name-of-load-balanced-set&lt;/LoadBalancedEndpointSetName&gt;
+              &lt;LocalPort&gt;local-port-number&lt;/LocalPort&gt;
+              &lt;Name&gt;name-of-endpoint&lt;/Name&gt;
+              &lt;Port&gt;external-port-number&lt;/Port&gt;
+              &lt;LoadBalancerProbe&gt;
+                &lt;Path&gt;path-of-probe&lt;/Path&gt;
+                &lt;Port&gt;port-assigned-to-probe&lt;/Port&gt;
+                &lt;Protocol&gt;probe-protocol&lt;/Protocol&gt;
+                &lt;IntervalInSeconds&gt;interval-of-probe&lt;/IntervalInSeconds&gt;
+                &lt;TimeoutInSeconds&gt;timeout-for-probe&lt;/TimeoutInSeconds&gt;
+              &lt;/LoadBalancerProbe&gt;
+              &lt;Protocol&gt;endpoint-protocol&lt;/Protocol&gt;
+              &lt;EnableDirectServerReturn&gt;enable-direct-server-return&lt;/EnableDirectServerReturn&gt;
+              &lt;EndpointACL&gt;
+                &lt;Rules&gt;
+                  &lt;Rule&gt;
+                    &lt;Order&gt;priority-of-the-rule&lt;/Order&gt;
+                    &lt;Action&gt;permit-rule&lt;/Action&gt;
+                    &lt;RemoteSubnet&gt;subnet-of-the-rule&lt;/RemoteSubnet&gt;
+                    &lt;Description&gt;description-of-the-rule&lt;/Description&gt;
+                  &lt;/Rule&gt;
+                &lt;/Rules&gt;
+              &lt;/EndpointACL&gt;
+            &lt;/InputEndpoint&gt;
+          &lt;/InputEndpoints&gt;
+          &lt;SubnetNames&gt;
+            &lt;SubnetName&gt;name-of-subnet&lt;/SubnetName&gt;
+          &lt;/SubnetNames&gt;        
+        &lt;/ConfigurationSet&gt;
+      &lt;/ConfigurationSets&gt;
+      &lt;AvailabilitySetName&gt;name-of-availability-set&lt;/AvailabilitySetName&gt;
+      &lt;DataVirtualHardDisks&gt;
+        &lt;DataVirtualHardDisk&gt;
+          &lt;HostCaching&gt;caching-mode&lt;/HostCaching&gt; 
+          &lt;DiskLabel&gt;label-of-data-disk&lt;/DiskLabel&gt;            
+          &lt;DiskName&gt;name-of-disk&lt;/DiskName&gt;
+          &lt;Lun&gt;logical-unit-number&lt;/Lun&gt;
+          &lt;LogicalDiskSizeInGB&gt;size-in-gb-of-data-disk&lt;/LogicalDiskSizeInGB&gt;            
+          &lt;MediaLink&gt;path-to-vhd&lt;/MediaLink&gt;
+        &lt;/DataVirtualHardDisk&gt;
+      &lt;/DataVirtualHardDisks&gt;
+      &lt;OSVirtualHardDisk&gt;
+        &lt;HostCaching&gt;caching-mode&lt;/HostCaching&gt;    
+        &lt;DiskLabel&gt;label-of-operating-system-disk&lt;/DiskLabel&gt;
+        &lt;DiskName&gt;name-of-disk&lt;/DiskName&gt;                    
+        &lt;MediaLink&gt;path-to-vhd&lt;/MediaLink&gt;
+        &lt;SourceImageName&gt;name-of-source-image&lt;/SourceImageName&gt;
+      &lt;/OSVirtualHardDisk&gt;      
+      &lt;RoleSize&gt;size-of-virtual-machine&lt;/RoleSize&gt;
+    &lt;/Role&gt;
+  &lt;/RoleList&gt;
+  &lt;VirtualNetworkName&gt;MyProdictionNetwork&lt;/VirtualNetworkName&gt;
+  &lt;Dns&gt;
+    &lt;DnsServers&gt;
+      &lt;DnsServer&gt;
+        &lt;Name&gt;dns-name&lt;/Name&gt;
+        &lt;Address&gt;dns-ip-address&lt;/Address&gt;
+      &lt;/DnsServer&gt;
+    &lt;/DnsServers&gt;
+  &lt;/Dns&gt;
+&lt;/Deployment&gt;</value>
+  </data>
+  <data name="CreateVirtualNetworkSite" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;NetworkConfiguration Url="[service-endpoint]/[subscription-id]/services/networking/media" Method="POST" xmlns="http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" &gt;
+  &lt;VirtualNetworkConfiguration&gt;
+    &lt;Dns&gt;
+      &lt;DnsServers&gt;
+        &lt;DnsServer name="dns-server-name" IPAddress="IPV4-address-of-the-server"/&gt;
+      &lt;/DnsServers&gt;
+    &lt;/Dns&gt;
+    &lt;LocalNetworkSites&gt;
+      &lt;LocalNetworkSite name="local-site-name"&gt;
+        &lt;AddressSpace&gt;
+          &lt;AddressPrefix&gt;CIDR-identifier&lt;/AddressPrefix&gt;
+        &lt;/AddressSpace&gt;
+        &lt;VPNGatewayAddress&gt;IPV4-address-of-the-vpn-gateway&lt;/VPNGatewayAddress&gt;
+      &lt;/LocalNetworkSite&gt;
+    &lt;/LocalNetworkSites&gt;
+    &lt;VirtualNetworkSites&gt;
+      &lt;VirtualNetworkSite name="virtual-network-name" AffinityGroup="affinity-group-name"&gt;
+        &lt;Label&gt;label-for-the-site&lt;/Label&gt;
+        &lt;AddressSpace&gt;
+          &lt;AddressPrefix&gt;CIDR-identifier&lt;/AddressPrefix&gt;
+        &lt;/AddressSpace&gt;
+        &lt;Subnets&gt;
+          &lt;Subnet name="subnet-name"&gt;
+            &lt;AddressPrefix&gt;CIDR-identifier&lt;/AddressPrefix&gt;
+          &lt;/Subnet&gt;
+        &lt;/Subnets&gt;
+        &lt;DnsServersRef&gt;
+          &lt;DnsServerRef name="primary-DNS-name" /&gt;
+        &lt;/DnsServersRef&gt;
+        &lt;Gateway profile="Small"&gt;
+          &lt;VPNClientAddressPool&gt;
+            &lt;AddressPrefix&gt;CIDR-identifier&lt;/AddressPrefix&gt;
+          &lt;/VPNClientAddressPool&gt;
+          &lt;ConnectionsToLocalNetwork&gt;
+            &lt;LocalNetworkSiteRef name="local-site-name"&gt;
+              &lt;Connection type="connection-type"/&gt;
+            &lt;/LocalNetworkSiteRef&gt;
+          &lt;/ConnectionsToLocalNetwork&gt;
+        &lt;/Gateway&gt;
+      &lt;/VirtualNetworkSite&gt;
+    &lt;/VirtualNetworkSites&gt;
+  &lt;/VirtualNetworkConfiguration&gt;
+&lt;/NetworkConfiguration&gt;</value>
+  </data>
+  <data name="DeleteAffinityGroup" xml:space="preserve">
+    <value>&lt;Empty Url="[service-endpoint]/[subscription-id]/affinitygroups/{name}" Method="DELETE"&gt;&lt;/Empty&gt;</value>
+  </data>
+  <data name="DeleteHostedService" xml:space="preserve">
+    <value>&lt;Empty Url="[service-endpoint]/[subscription-id]/services/hostedservices/{service-name}" Method="DELETE"&gt;&lt;/Empty&gt;</value>
+  </data>
+  <data name="GetAffinityGroup" xml:space="preserve">
+    <value>&lt;Empty Url="[service-endpoint]/[subscription-id]/affinitygroups/{name}" Method="GET"&gt;&lt;/Empty&gt;</value>
+  </data>
+  <data name="GetHostedService" xml:space="preserve">
+    <value>&lt;Empty Url="[service-endpoint]/[subscription-id]/services/hostedservices/{service-name}" Method="GET"&gt;&lt;/Empty&gt;</value>
+  </data>
+  <data name="GetStorageKey" xml:space="preserve">
+    <value>&lt;Empty Url="[service-endpoint]/[subscription-id]/services/storageservices/{service-name}/keys" Method="GET"&gt;&lt;/Empty&gt;</value>
+  </data>
+  <data name="GetSubscription" xml:space="preserve">
+    <value>&lt;Empty Url="[service-endpoint]/[subscription-id]" Method="GET"&gt;&lt;/Empty&gt;</value>
+  </data>
+  <data name="ListAffinityGroup" xml:space="preserve">
+    <value>&lt;Empty Url="[service-endpoint]/[subscription-id]/affinitygroups" Method="GET"&gt;&lt;/Empty&gt;</value>
+  </data>
+  <data name="ListDisk" xml:space="preserve">
+    <value>&lt;Empty Url="[service-endpoint]/[subscription-id]/services/disks" Method="GET"&gt;&lt;/Empty&gt;</value>
+  </data>
+  <data name="ListHostedService" xml:space="preserve">
+    <value>&lt;Empty Url="[service-endpoint]/[subscription-id]/services/hostedservices" Method="GET"&gt;&lt;/Empty&gt;</value>
+  </data>
+  <data name="ListOSImage" xml:space="preserve">
+    <value>&lt;Empty Url="[service-endpoint]/[subscription-id]/services/images" Method="GET"&gt;&lt;/Empty&gt;</value>
+  </data>
+  <data name="ListServer" xml:space="preserve">
+    <value>&lt;Empty Url="[service-endpoint]/[subscription-id]/services/sqlservers/servers" Method="GET"&gt;&lt;/Empty&gt;</value>
+  </data>
+  <data name="ListServiceResource" xml:space="preserve">
+    <value>&lt;Empty Url="[service-endpoint]/[subscription-id]//services/sqlservers/servers/{name}/databases?contentview=generic" Method="GET"&gt;&lt;/Empty&gt;</value>
+  </data>
+  <data name="ListStorageService" xml:space="preserve">
+    <value>&lt;Empty Url="[service-endpoint]/[subscription-id]/services/storageservices" Method="GET"&gt;&lt;/Empty&gt;</value>
+  </data>
+  <data name="ListVirtualNetworkSite" xml:space="preserve">
+    <value>&lt;Empty Url="[service-endpoint]/[subscription-id]/services/networking/virtualnetwork" Method="GET"&gt;&lt;/Empty&gt;</value>
+  </data>
+  <data name="ListWebSite" xml:space="preserve">
+    <value>&lt;Empty Url="[service-endpoint]/[subscription-id]/services/webspaces/{webspacename}/sites" Method="GET"&gt;&lt;/Empty&gt;</value>
+  </data>
+  <data name="ListWebSpace" xml:space="preserve">
+    <value>&lt;Empty Url="[service-endpoint]/[subscription-id]/services/webspaces" Method="GET"&gt;&lt;/Empty&gt;</value>
+  </data>
+  <data name="UpdateAffinityGroup" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;UpdateAffinityGroup Url="[service-endpoint]/[subscription-id]/affinitygroups/{name}" Mehod="PUT"  xmlns="http://schemas.microsoft.com/windowsazure"&gt;
+      &lt;Label&gt;base64-encoded-affinity-group-label&lt;/Label&gt;
+      &lt;Description&gt;affinity-group-description&lt;/Description&gt;
+&lt;/UpdateAffinityGroup&gt;</value>
+  </data>
+  <data name="UpdateHostedService" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;UpdateHostedService From="HostedServiceProperties" Url="[service-endpoint]/[subscription-id]/services/hostedservices/{service-name}" Method="PUT" xmlns="http://schemas.microsoft.com/windowsazure"&gt;
+  &lt;Label&gt;base64-encoded-service-label&lt;/Label&gt;
+  &lt;Description&gt;description&lt;/Description&gt;
+  &lt;ExtendedProperties&gt;
+    &lt;ExtendedProperty&gt;
+      &lt;Name&gt;property-name&lt;/Name&gt;
+      &lt;Value&gt;property-value&lt;/Value&gt;
+    &lt;/ExtendedProperty&gt;
+  &lt;/ExtendedProperties&gt;
+&lt;/UpdateHostedService&gt;</value>
+  </data>
+  <data name="UpgradeDeployment" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;UpgradeDeployment xmlns="http://schemas.microsoft.com/windowsazure" Method="POST"&gt;
+  &lt;Mode&gt;auto|manual&lt;/Mode&gt;
+  &lt;PackageUrl&gt;url-to-package&lt;/PackageUrl&gt;
+  &lt;Configuration&gt;base64-encoded-config-file&lt;/Configuration&gt;
+  &lt;Label&gt;base-64-encoded-label&lt;/Label&gt;
+  &lt;RoleToUpgrade&gt;role-name&lt;/RoleToUpgrade&gt;
+  &lt;Force&gt;true|false&lt;/Force&gt;
+  &lt;ExtendedProperties&gt;
+    &lt;ExtendedProperty&gt;
+      &lt;Name&gt;property-name&lt;/Name&gt;
+      &lt;Value&gt;property-value&lt;/Value&gt;
+    &lt;/ExtendedProperty&gt;
+  &lt;/ExtendedProperties&gt;
+  &lt;ExtensionConfiguration&gt;
+    &lt;AllRoles&gt;
+      &lt;Extension&gt;
+        &lt;Id&gt;identifier-of-extension&lt;/Id&gt;
+      &lt;/Extension&gt;
+    &lt;/AllRoles&gt;
+    &lt;NamedRoles&gt;
+      &lt;Role&gt;
+        &lt;RoleName&gt;role_name1&lt;/RoleName&gt;
+        &lt;Extensions&gt;
+          &lt;Extension&gt;
+            &lt;Id&gt;identifier-of-extension&lt;/Id&gt;
+          &lt;/Extension&gt;
+        &lt;/Extensions&gt;
+      &lt;/Role&gt;
+    &lt;/NamedRoles&gt;
+  &lt;/ExtensionConfiguration&gt;
+&lt;/UpgradeDeployment&gt;</value>
+  </data>
+</root>
