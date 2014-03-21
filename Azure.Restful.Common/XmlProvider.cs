@@ -2,7 +2,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Xml;
@@ -25,7 +24,7 @@ namespace Azure.Restful.Common
         public static RequestInfo CreateRequestInfo<T>(string name, T entity) where T : class,new()
         {
             string xml = GetXmlTemplate(name);
-            return ToRequestInfo<T>(entity, xml);
+            return ToRequestInfo(entity, xml);
         }
 
         public static T ToEntity<T>(string xml) where T : class,new()
@@ -71,10 +70,8 @@ namespace Azure.Restful.Common
                         return Convert.ChangeType(value, underlyingType);
                 }
             }
-            catch(Exception ex)
+            catch
             {
-                Debug.WriteLine("Convert {0} to target type {1} failed", value, targetType.ToString());
-                Debug.WriteLine(ex.Message);
                 return null;
             }
         }
@@ -91,13 +88,12 @@ namespace Azure.Restful.Common
                 PropertyInfo p = t.GetProperty(cNode.Name);
                 if (p == null)
                 {
-                    Debug.WriteLine("Class [{0}] does not have property [{1}]", t.FullName, cNode.Name);
                     continue;
                 }
                 if (p.PropertyType.Namespace == "System")
                 {
                     object obj = ConvertToType(cNode.InnerText, p.PropertyType);
-                    if ( obj != null )
+                    if (obj != null)
                     {
                         p.SetValue(entity, obj);
                     }

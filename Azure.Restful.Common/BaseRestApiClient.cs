@@ -1,7 +1,6 @@
 ﻿using Azure.Restful.Model;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Xml;
@@ -70,7 +69,6 @@ namespace Azure.Restful.Common
                         using (StreamReader reader = new StreamReader(ex.Response.GetResponseStream()))
                         {
                             string errorResponseString = reader.ReadToEnd();
-                            Debug.WriteLine(errorResponseString);
                             throw new ApplicationException(errorResponseString);
                         }
                     }
@@ -97,21 +95,12 @@ namespace Azure.Restful.Common
         public T GetResponseEntity<T>(SubscriptionAccount subscription, RequestInfo request) where T : class,new()
         {
             string response = GetResponse(subscription, request);
-            Debug.WriteLine("========================Request starts=====================");
-            Debug.WriteLine("Request = {0}, Type = {1}, response = ", request.Url, typeof(T));
-            Debug.WriteLine(response);
-            Debug.WriteLine("========================Request ends=======================");
             return string.IsNullOrEmpty(response) ? null : XmlProvider.ToEntity<T>(response);
-
         }
 
         public IList<T> GetResponseEntities<T>(SubscriptionAccount subscription, RequestInfo request) where T : class,new()
         {
             string response = GetResponse(subscription, request);
-            Debug.WriteLine("========================Request starts=====================");
-            Debug.WriteLine("Request = {0}, Type = {1}, response = ", request.Url, typeof(T));
-            Debug.WriteLine(response);
-            Debug.WriteLine("========================Request ends=======================");
             return string.IsNullOrEmpty(response) ? null : XmlProvider.ToEntityList<T>(response);
         }
 

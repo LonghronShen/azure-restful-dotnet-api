@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
 using Azure.Restful.Model.Base;
-using System.Configuration;
 
 namespace Azure.Restful.Model
 {
     [Serializable]
     public class SubscriptionAccount : BaseEntity
     {
-        private static readonly string ManagementCertificate = ConfigurationManager.AppSettings["ManagementCertificate"];
+
         public SubscriptionAccount(Guid subscriptionId, string serviceEndpoint)
             : this()
         {
@@ -16,70 +15,75 @@ namespace Azure.Restful.Model
             ServiceEndpoint = serviceEndpoint;
         }
 
-        public SubscriptionAccount()
-        {
-            CertificateThumbprint = ManagementCertificate;
-        }
+        public SubscriptionAccount() { }
 
         public Guid SubscriptionId { get; set; }
 
         public string SubscriptionName { get; set; }
 
-        private string _certificateThumbprint;
-        public string CertificateThumbprint
-        {
-            get { return _certificateThumbprint; }
-            set
-            {
-                if (string.Compare(_certificateThumbprint, value, StringComparison.OrdinalIgnoreCase) != 0)
-                {
-                    _certificateThumbprint = value;
-                    _certificate = null;
-                }
-            }
-        }
+
+        public string ServiceEndpoint { get; set; }
+
+        public string SqlAzureServiceEndpoint { get; set; }
+
+        public string CertificateRawData { get; set; }
+
+        public string CertificateThumbprint { get; set; }
 
         private X509Certificate2 _certificate;
         public X509Certificate2 Certificate
         {
             get
             {
-                if (string.IsNullOrEmpty(CertificateThumbprint))
-                {
-                    _certificate = null;
-                    return null;
-                }
                 if (_certificate != null)
                 {
                     return _certificate;
                 }
-                StoreLocation[] locations = { StoreLocation.CurrentUser, StoreLocation.LocalMachine };
-                foreach (StoreLocation location in locations)
+
+                if (string.IsNullOrEmpty(CertificateRawData) && string.IsNullOrEmpty(CertificateThumbprint))
                 {
-                    X509Store store = new X509Store("My", location);
-                    try
+                    throw new Exception("Please specify either CertificateRawData or CertificateThumbprint");
+                }
+
+                if (!string.IsNullOrEmpty(CertificateRawData))
+                {
+                    _certificate = new X509Certificate2(GetBytes(CertificateRawData));
+                    return _certificate;
+                }
+
+                if (!string.IsNullOrEmpty(CertificateThumbprint))
+                {
+                    StoreLocation[] locations = {StoreLocation.CurrentUser, StoreLocation.LocalMachine};
+                    foreach (StoreLocation location in locations)
                     {
-                        store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
-                        X509Certificate2Collection certificates = store.Certificates.Find(X509FindType.FindByThumbprint, CertificateThumbprint, false);
-                        if (certificates.Count > 0)
+                        X509Store store = new X509Store("My", location);
+                        try
                         {
-                            _certificate = certificates[0];
-                            return _certificate;
+                            store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
+                            X509Certificate2Collection certificates =
+                                store.Certificates.Find(X509FindType.FindByThumbprint, CertificateThumbprint, false);
+                            if (certificates.Count > 0)
+                            {
+                                _certificate = certificates[0];
+                                return _certificate;
+                            }
+                        }
+                        finally
+                        {
+                            store.Close();
                         }
                     }
-                    finally
-                    {
-                        store.Close();
-                    }
                 }
-                throw new ArgumentException(string.Format("A Certificate with Thumbprint '{0}' could not be located.", CertificateThumbprint));
+
+                return null;
             }
         }
 
-        public string ServiceEndpoint { get; set; }
-
-        public string SqlAzureServiceEndpoint { get; set; }
-
-        public string CurrentStorageAccount { get; set; }
+        private byte[] GetBytes(string str)
+        {
+            byte[] bytes = new byte[str.Length * sizeof(char)];
+            Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
+            return bytes;
+        } 
     }
 }
