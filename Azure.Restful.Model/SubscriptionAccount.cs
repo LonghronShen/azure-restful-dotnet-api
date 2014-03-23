@@ -7,7 +7,6 @@ namespace Azure.Restful.Model
     [Serializable]
     public class SubscriptionAccount : BaseEntity
     {
-
         public SubscriptionAccount(Guid subscriptionId, string serviceEndpoint)
             : this()
         {
@@ -20,7 +19,6 @@ namespace Azure.Restful.Model
         public Guid SubscriptionId { get; set; }
 
         public string SubscriptionName { get; set; }
-
 
         public string ServiceEndpoint { get; set; }
 
@@ -47,43 +45,53 @@ namespace Azure.Restful.Model
 
                 if (!string.IsNullOrEmpty(CertificateRawData))
                 {
-                    _certificate = new X509Certificate2(GetBytes(CertificateRawData));
-                    return _certificate;
+                    return CreateCertificateFromRawData(CertificateRawData);
                 }
 
                 if (!string.IsNullOrEmpty(CertificateThumbprint))
                 {
-                    StoreLocation[] locations = {StoreLocation.CurrentUser, StoreLocation.LocalMachine};
-                    foreach (StoreLocation location in locations)
-                    {
-                        X509Store store = new X509Store("My", location);
-                        try
-                        {
-                            store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
-                            X509Certificate2Collection certificates =
-                                store.Certificates.Find(X509FindType.FindByThumbprint, CertificateThumbprint, false);
-                            if (certificates.Count > 0)
-                            {
-                                _certificate = certificates[0];
-                                return _certificate;
-                            }
-                        }
-                        finally
-                        {
-                            store.Close();
-                        }
-                    }
+                    return CreateCertificateFromThumbprint(CertificateThumbprint);
                 }
-
                 return null;
             }
         }
 
-        private byte[] GetBytes(string str)
+        private X509Certificate2 CreateCertificateFromRawData(string certRawData)
         {
-            byte[] bytes = new byte[str.Length * sizeof(char)];
-            Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
-            return bytes;
-        } 
+            if (string.IsNullOrEmpty(certRawData))
+            {
+                throw new ArgumentNullException("certRawData");
+            }
+            return new X509Certificate2(Convert.FromBase64String(CertificateRawData));
+        }
+
+        private X509Certificate2 CreateCertificateFromThumbprint(string certThumbprint)
+        {
+            if (string.IsNullOrEmpty(certThumbprint))
+            {
+                throw new ArgumentNullException("certThumbprint");
+            }
+
+            StoreLocation[] locations = { StoreLocation.CurrentUser, StoreLocation.LocalMachine };
+            foreach (StoreLocation location in locations)
+            {
+                X509Store store = new X509Store("My", location);
+                try
+                {
+                    store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
+                    X509Certificate2Collection certificates =
+                        store.Certificates.Find(X509FindType.FindByThumbprint, CertificateThumbprint, false);
+                    if (certificates.Count > 0)
+                    {
+                        return certificates[0];
+                    }
+                }
+                finally
+                {
+                    store.Close();
+                }
+            }
+            throw new Exception("Can not find certification by cert thumbprint " + certThumbprint);
+        }
     }
 }

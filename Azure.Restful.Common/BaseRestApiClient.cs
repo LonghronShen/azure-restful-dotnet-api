@@ -12,7 +12,6 @@ namespace Azure.Restful.Common
         protected abstract string GetApiServiceEndpoint(SubscriptionAccount subscriptionAccount);
         protected abstract string ApiVersion { get; }
 
-
         private string GetResponse(SubscriptionAccount subscription, string url, string method, string requestBody, string contentType = null)
         {
             Uri uri = new Uri(url);
