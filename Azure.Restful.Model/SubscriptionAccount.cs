@@ -45,12 +45,14 @@ namespace Azure.Restful.Model
 
                 if (!string.IsNullOrEmpty(CertificateRawData))
                 {
-                    return CreateCertificateFromRawData(CertificateRawData);
+                    _certificate = CreateCertificateFromRawData(CertificateRawData);
+                    return _certificate;
                 }
 
                 if (!string.IsNullOrEmpty(CertificateThumbprint))
                 {
-                    return CreateCertificateFromThumbprint(CertificateThumbprint);
+                    _certificate = CreateCertificateFromThumbprint(CertificateThumbprint);
+                    return _certificate;
                 }
                 return null;
             }
