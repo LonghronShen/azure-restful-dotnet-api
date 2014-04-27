@@ -6,14 +6,28 @@ using Azure.Restful.Common;
 
 namespace Azure.Restful.Provider
 {
-    public abstract class BaseProvider<T> where T : class,new()
+    public class BaseProvider<T> where T : class,new()
     {
         protected SubscriptionAccount subscriptionAccount;
-        protected BaseRestApiClient _provider = null;
+        protected BaseRestApiClient provider = null;
 
-        protected BaseProvider(SubscriptionAccount subscriptionAccount)
+        public BaseProvider(SubscriptionAccount subscriptionAccount)
         {
             this.subscriptionAccount = subscriptionAccount;
+            this.provider = ServiceManagementRestApiClient.Instance;
+        }
+
+        public BaseProvider()
+            : this(null)
+        {
+
+        }
+
+
+        public SubscriptionAccount Account
+        {
+            get { return subscriptionAccount; }
+            set { subscriptionAccount = value; }
         }
 
         protected virtual string GenerateUrl(string urlTemplate, T entity)
@@ -49,7 +63,7 @@ namespace Azure.Restful.Provider
         {
             string opName = "List" + typeof(T).Name;
             RequestInfo request = XmlProvider.CreateRequestInfo<T>(opName, null);
-            return _provider.GetResponseEntities<T>(subscriptionAccount, request);
+            return provider.GetResponseEntities<T>(subscriptionAccount, request);
         }
 
         public virtual T GetSingle(string name)
@@ -57,7 +71,7 @@ namespace Azure.Restful.Provider
             string opName = "Get" + typeof(T).Name;
             RequestInfo request = XmlProvider.CreateRequestInfo<T>(opName, null);
             request.Url = GenerateUrl(request.Url, name);
-            return _provider.GetResponseEntity<T>(subscriptionAccount, request);
+            return provider.GetResponseEntity<T>(subscriptionAccount, request);
         }
 
         public virtual bool Update(T entity)
@@ -79,7 +93,7 @@ namespace Azure.Restful.Provider
             request.Url = GenerateUrl(request.Url, name);
             try
             {
-                _provider.GetResponse(subscriptionAccount, request);
+                provider.GetResponse(subscriptionAccount, request);
                 return true;
             }
             catch
@@ -98,7 +112,7 @@ namespace Azure.Restful.Provider
         {
             RequestInfo request = XmlProvider.CreateRequestInfo<T>(workName, entity);
             request.Url = GenerateUrl(request.Url, entity);
-            return _provider.GetResponse(subscriptionAccount, request);
+            return provider.GetResponse(subscriptionAccount, request);
         }
 
         protected virtual bool DoWorkWithoutResponse(string workName, T entity)

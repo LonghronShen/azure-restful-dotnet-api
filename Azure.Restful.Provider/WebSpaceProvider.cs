@@ -9,7 +9,12 @@ namespace Azure.Restful.Provider
         public WebSpaceProvider(SubscriptionAccount subscriptionAccount)
             : base(subscriptionAccount)
         {
-            _provider = ServiceManagementRestApiClient.Instance;
+        }
+
+        public WebSpaceProvider()
+            : this(null)
+        {
+
         }
     }
 }

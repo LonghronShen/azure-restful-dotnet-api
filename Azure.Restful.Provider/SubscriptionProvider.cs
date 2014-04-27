@@ -10,7 +10,12 @@ namespace Azure.Restful.Provider
         public SubscriptionProvider(SubscriptionAccount subscriptionAccount)
             : base(subscriptionAccount)
         {
-            _provider = ServiceManagementRestApiClient.Instance;
+        }
+
+        public SubscriptionProvider()
+            : this(null)
+        {
+
         }
 
         public Subscription GetSingle()

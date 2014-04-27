@@ -10,7 +10,12 @@ namespace Azure.Restful.Provider
         public StorageServiceProvider(SubscriptionAccount subscriptionAccount)
             : base(subscriptionAccount)
         {
-            _provider = ServiceManagementRestApiClient.Instance;
+        }
+
+        public StorageServiceProvider()
+            : this(null)
+        {
+
         }
 
         public override StorageService GetSingle(string name)
@@ -18,7 +23,7 @@ namespace Azure.Restful.Provider
             string opName = "GetStorageKey";
             RequestInfo request = XmlProvider.CreateRequestInfo<StorageService>(opName, null);
             request.Url = GenerateUrl(request.Url, name);
-            return _provider.GetResponseEntity<StorageService>(subscriptionAccount, request);
+            return provider.GetResponseEntity<StorageService>(subscriptionAccount, request);
         }
     }
 }

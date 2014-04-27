@@ -8,7 +8,13 @@ namespace Azure.Restful.Provider
         public SqlServerProvider(SubscriptionAccount subscriptionAccount)
             : base(subscriptionAccount)
         {
-            _provider = SqlAzureRestApiClient.Instance;
+            provider = SqlAzureRestApiClient.Instance;
+        }
+
+        public SqlServerProvider()
+            : this(null)
+        {
+
         }
     }
 }

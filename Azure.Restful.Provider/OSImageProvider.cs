@@ -9,7 +9,12 @@ namespace Azure.Restful.Provider
         public OSImageProvider(SubscriptionAccount subscriptionAccount)
             : base(subscriptionAccount)
         {
-            _provider = ServiceManagementRestApiClient.Instance;
+        }
+
+        public OSImageProvider()
+            : this(null)
+        {
+
         }
     }
 }

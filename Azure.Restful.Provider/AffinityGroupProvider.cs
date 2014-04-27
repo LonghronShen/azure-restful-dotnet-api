@@ -10,8 +10,11 @@ namespace Azure.Restful.Provider
         public AffinityGroupProvider(SubscriptionAccount subscriptionAccount)
             : base(subscriptionAccount)
         {
-            _provider = ServiceManagementRestApiClient.Instance;
         }
 
+        public AffinityGroupProvider()
+            : this(null)
+        {
+        }
     }
 }

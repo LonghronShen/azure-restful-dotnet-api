@@ -13,7 +13,12 @@ namespace Azure.Restful.Provider
         public VirtualMachineProvider(SubscriptionAccount subscriptionAccount)
             : base(subscriptionAccount)
         {
-            _provider = ServiceManagementRestApiClient.Instance;
+        }
+
+        public VirtualMachineProvider()
+            : this(null)
+        {
+
         }
 
         public override IEnumerable<VirtualMachine> GetList()
@@ -27,7 +32,7 @@ namespace Azure.Restful.Provider
                 Deployment deployment = deploymentProvider.GetSingleBySlot(hs.ServiceName, "production");
                 if (deployment != null)
                 {
-                    foreach (var role in deployment.RoleList.Where(v => v.RoleType == "PersistentVMRole").ToList())
+                    if (deployment.RoleList.Any(v => v.RoleType == "PersistentVMRole"))
                     {
                         result.AddRange(GetListByDeployment(deployment));
                     }
@@ -54,6 +59,22 @@ namespace Azure.Restful.Provider
                     DefaultWinRmCertificateThumbprint = role.DefaultWinRmCertificateThumbprint,
                     DeploymentId = deployment.PrivateID
                 };
+                RoleInstance instance = deployment.RoleInstanceList.FirstOrDefault(v => v.RoleName == role.RoleName);
+                if (instance != null)
+                {
+                    vm.InstanceName = instance.InstanceName;
+                    vm.InstanceStatus = instance.InstanceStatus;
+                    vm.InstanceUpgradeDomain = instance.InstanceUpgradeDomain;
+                    vm.InstanceFaultDomain = instance.InstanceFaultDomain;
+                    vm.InstanceSize = instance.InstanceSize;
+                    vm.InstanceStateDetails = instance.InstanceStateDetails;
+                    vm.InstanceErrorCode = instance.InstanceErrorCode;
+                    vm.IpAddress = instance.IpAddress;
+                    vm.InstanceEndpoints = instance.InstanceEndpoints;
+                    vm.PowerState = instance.PowerState;
+                    vm.HostName = instance.HostName;
+                    vm.RemoteAccessCertificateThumbprint = instance.RemoteAccessCertificateThumbprint;
+                }
                 yield return vm;
             }
         }
@@ -69,7 +90,7 @@ namespace Azure.Restful.Provider
             string opName = "CreateVirtualMachineByDeployment";
             RequestInfo request = XmlProvider.CreateRequestInfo<Role>(opName, vmRole);
             request.Url = GenerateUrl(request.Url, hostedServiceName, deploymentName);
-            _provider.GetResponse(subscriptionAccount, request);
+            provider.GetResponse(subscriptionAccount, request);
             return true;
         }
 
@@ -78,7 +99,7 @@ namespace Azure.Restful.Provider
             string opName = "CreateVirtualMachineByDeployment";
             RequestInfo request = XmlProvider.CreateRequestInfo<Deployment>(opName, deployment);
             request.Url = GenerateUrl(request.Url, hostedServiceName);
-            _provider.GetResponse(subscriptionAccount, request);
+            provider.GetResponse(subscriptionAccount, request);
             return true;
         }
 
@@ -88,7 +109,7 @@ namespace Azure.Restful.Provider
             request.Url = GenerateUrl(request.Url, hostedServiceName);
             request.RequestBody = xml;
             request.Method = "POST";
-            _provider.GetResponse(subscriptionAccount, request);
+            provider.GetResponse(subscriptionAccount, request);
             return true;
         }
     }

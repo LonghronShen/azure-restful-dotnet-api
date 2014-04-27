@@ -26,6 +26,8 @@ namespace Azure.Restful.Model
 
         public string CertificateRawData { get; set; }
 
+        public string CertificatePassword { get; set; }
+
         public string CertificateThumbprint { get; set; }
 
         private X509Certificate2 _certificate;
@@ -45,7 +47,7 @@ namespace Azure.Restful.Model
 
                 if (!string.IsNullOrEmpty(CertificateRawData))
                 {
-                    _certificate = CreateCertificateFromRawData(CertificateRawData);
+                    _certificate = CreateCertificateFromRawData(CertificateRawData, CertificatePassword);
                     return _certificate;
                 }
 
@@ -60,11 +62,23 @@ namespace Azure.Restful.Model
 
         private X509Certificate2 CreateCertificateFromRawData(string certRawData)
         {
+            return CreateCertificateFromRawData(certRawData, null);
+        }
+
+        private X509Certificate2 CreateCertificateFromRawData(string certRawData, string password)
+        {
             if (string.IsNullOrEmpty(certRawData))
             {
                 throw new ArgumentNullException("certRawData");
             }
-            return new X509Certificate2(Convert.FromBase64String(CertificateRawData));
+            if (!string.IsNullOrEmpty(password))
+            {
+                return new X509Certificate2(Convert.FromBase64String(CertificateRawData), password);
+            }
+            else
+            {
+                return new X509Certificate2(Convert.FromBase64String(CertificateRawData));
+            }
         }
 
         private X509Certificate2 CreateCertificateFromThumbprint(string certThumbprint)

@@ -2,10 +2,10 @@
 
 namespace Azure.Restful.Model.Deployment
 {
-    public class VirtualMachine
+    public class VirtualMachine : RoleInstance
     {
         public string RoleName { get; set; }
-        public string OsVersion { get; set; }
+		public string OsVersion { get; set; }
         public string RoleType { get; set; }
         public List<ConfigurationSet> ConfigurationSets { get; set; }
         public string AvailabilitySetName { get; set; }

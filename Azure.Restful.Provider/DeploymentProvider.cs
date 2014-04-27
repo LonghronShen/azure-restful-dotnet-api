@@ -11,7 +11,12 @@ namespace Azure.Restful.Provider
         public DeploymentProvider(SubscriptionAccount subscriptionAccount)
             : base(subscriptionAccount)
         {
-            _provider = ServiceManagementRestApiClient.Instance;
+        }
+
+        public DeploymentProvider() :
+            this(null)
+        {
+
         }
 
         public override IEnumerable<Deployment> GetList()
@@ -33,7 +38,7 @@ namespace Azure.Restful.Provider
                     RequestBody = null
                 };
             request.Url = GenerateUrl(request.Url, hostedServiceName, slot);
-            return _provider.GetResponseEntity<Deployment>(subscriptionAccount, request);
+            return provider.GetResponseEntity<Deployment>(subscriptionAccount, request);
         }
 
         public Deployment GetSingleByName(string hostedServiceName, string name)
@@ -45,7 +50,7 @@ namespace Azure.Restful.Provider
                     RequestBody = null
                 };
             request.Url = GenerateUrl(request.Url, hostedServiceName, name);
-            return _provider.GetResponseEntity<Deployment>(subscriptionAccount, request);
+            return provider.GetResponseEntity<Deployment>(subscriptionAccount, request);
         }
 
         public override bool Create(Deployment entity)
@@ -58,7 +63,7 @@ namespace Azure.Restful.Provider
             string opName = "CreateDeployment";
             RequestInfo request = XmlProvider.CreateRequestInfo<DeploymentDefination>(opName, deploymentDefination);
             request.Url = GenerateUrl(request.Url, hostedServiceName, slot);
-            _provider.GetResponse(subscriptionAccount, request);
+            provider.GetResponse(subscriptionAccount, request);
             return true;
         }
 
@@ -76,7 +81,7 @@ namespace Azure.Restful.Provider
                     RequestBody = null
                 };
             request.Url = GenerateUrl(request.Url, hostedServiceName, slot);
-            _provider.GetResponse(subscriptionAccount, request);
+            provider.GetResponse(subscriptionAccount, request);
             return true;
         }
 
@@ -89,7 +94,7 @@ namespace Azure.Restful.Provider
                     RequestBody = null
                 };
             request.Url = GenerateUrl(request.Url, hostedServiceName, name);
-            _provider.GetResponse(subscriptionAccount, request);
+            provider.GetResponse(subscriptionAccount, request);
             return true;
         }
 
@@ -120,7 +125,7 @@ namespace Azure.Restful.Provider
             request.RequestBody += "<UpdateDeploymentStatus xmlns=\"http://schemas.microsoft.com/windowsazure\">";
             request.RequestBody += "<Status>" + status + "</Status>";
             request.RequestBody += "</UpdateDeploymentStatus>";
-            _provider.GetResponse(subscriptionAccount, request);
+            provider.GetResponse(subscriptionAccount, request);
             return true;
         }
 
@@ -145,7 +150,7 @@ namespace Azure.Restful.Provider
         {
             RequestInfo request = XmlProvider.CreateRequestInfo<UpgradeDeploymentDefination>("UpgradeDeployment", defination);
             request.Url = url;
-            _provider.GetResponse(subscriptionAccount, request);
+            provider.GetResponse(subscriptionAccount, request);
             return true;
         }
     }

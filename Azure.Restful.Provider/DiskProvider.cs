@@ -10,7 +10,12 @@ namespace Azure.Restful.Provider
         public DiskProvider(SubscriptionAccount subscriptionAccount)
             : base(subscriptionAccount)
         {
-            _provider = ServiceManagementRestApiClient.Instance;
+        }
+
+        public DiskProvider()
+            : this(null)
+        {
+
         }
 
     }

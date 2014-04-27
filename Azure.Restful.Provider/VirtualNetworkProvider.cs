@@ -11,7 +11,12 @@ namespace Azure.Restful.Provider
         public VirtualNetworkProvider(SubscriptionAccount subscriptionAccount)
             : base(subscriptionAccount)
         {
-            _provider = ServiceManagementRestApiClient.Instance;
+        }
+
+        public VirtualNetworkProvider()
+            : this(null)
+        {
+
         }
 
         public string GetNetworkConfiguration()
@@ -20,7 +25,7 @@ namespace Azure.Restful.Provider
             Guid subscriptionId = subscriptionAccount.SubscriptionId;
             request.Url = "https://management.core.windows.net/[subscription-id]/services/networking/media";
             request.Method = "GET";
-            return _provider.GetResponse(subscriptionAccount, request);
+            return provider.GetResponse(subscriptionAccount, request);
         }
 
         private string GenerateCreateXML(VirtualNetworkSite virtualNetworkSite)
@@ -228,7 +233,7 @@ namespace Azure.Restful.Provider
                 request.Method = "PUT";
                 if(!string.IsNullOrEmpty(xml))
                 {
-                    _provider.GetResponse(subscriptionAccount, request, "text/plain");
+                    provider.GetResponse(subscriptionAccount, request, "text/plain");
                     return true;
                 }
                 else
@@ -255,7 +260,7 @@ namespace Azure.Restful.Provider
                 request.Method = "PUT";
                 if (!string.IsNullOrEmpty(xml))
                 {
-                    _provider.GetResponse(subscriptionAccount, request, "text/plain");
+                    provider.GetResponse(subscriptionAccount, request, "text/plain");
                     return true;
                 }
                 else

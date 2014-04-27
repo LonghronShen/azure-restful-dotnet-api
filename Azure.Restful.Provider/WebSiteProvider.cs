@@ -7,19 +7,31 @@ namespace Azure.Restful.Provider
 {
     public class WebSiteProvider : BaseProvider<WebSite>
     {
-        private string _webSpaceName;
+        private string webSpaceName;
         public WebSiteProvider(SubscriptionAccount subscriptionAccount, string webSpaceName)
             : base(subscriptionAccount)
         {
-            _provider = ServiceManagementRestApiClient.Instance;
-            _webSpaceName = webSpaceName;
+            this.webSpaceName = webSpaceName;
         }
+
+        public WebSiteProvider()
+            : this(null, null)
+        {
+
+        }
+
+        public string WebSpaceName
+        {
+            get { return webSpaceName; }
+            set { webSpaceName = value; }
+        }
+
         public override IEnumerable<WebSite> GetList()
         {
             string opName = "ListWebSite";
             RequestInfo request = XmlProvider.CreateRequestInfo<WebSite>(opName, null);
-            request.Url = GenerateUrl(request.Url, _webSpaceName);
-            return _provider.GetResponseEntities<WebSite>(subscriptionAccount, request);
+            request.Url = GenerateUrl(request.Url, webSpaceName);
+            return provider.GetResponseEntities<WebSite>(subscriptionAccount, request);
         }
     }
 }

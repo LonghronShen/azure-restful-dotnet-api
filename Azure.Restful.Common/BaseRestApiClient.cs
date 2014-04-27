@@ -59,6 +59,8 @@ namespace Azure.Restful.Common
             }
             catch (WebException ex)
             {
+                RestApiException exc = null;
+
                 response = ex.Response as HttpWebResponse;
 
                 if (response != null)
@@ -68,11 +70,20 @@ namespace Azure.Restful.Common
                         using (StreamReader reader = new StreamReader(ex.Response.GetResponseStream()))
                         {
                             string errorResponseString = reader.ReadToEnd();
-                            throw new ApplicationException(errorResponseString);
+                            exc = new RestApiException(errorResponseString, response.StatusCode, ex);
                         }
                     }
+                    else
+                    {
+                        return null;
+                    }
                 }
-                return null;
+                else
+                {
+                    exc = new RestApiException(ex.Message, ex);
+                }
+
+                throw exc;
             }
             finally
             {
