@@ -1,5 +1,6 @@
 ﻿using Azure.Restful.Model;
 using Azure.Restful.Common;
+using Azure.Restful.Model.SqlAzure;
 
 namespace Azure.Restful.Provider
 {

@@ -17,5 +17,7 @@ namespace Azure.Restful.Model.Deployment
         public string PowerState { get; set; }
         public string HostName { get; set; }
         public string RemoteAccessCertificateThumbprint { get; set; }
+        public GuestAgentStatus GuestAgentStatus { get; set; }
+        public List<ResourceExtensionStatus> ResourceExtensionStatusList { get; set; }
     }
 }

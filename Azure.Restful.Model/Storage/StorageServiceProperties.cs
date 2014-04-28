@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Azure.Restful.Model.StorageService
+namespace Azure.Restful.Model.Storage
 {
     public class StorageServiceProperties
     {
@@ -19,5 +19,7 @@ namespace Azure.Restful.Model.StorageService
         public string StatusOfSecondary { get; set; }
         public DateTime CreationTime { get; set; }
         public string CustomDomains { get; set; }
+        public bool SecondaryReadEnabled { get; set; }
+        public List<string> SecondaryEndpoints { get; set; }
     }
 }

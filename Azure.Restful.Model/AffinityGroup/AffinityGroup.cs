@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
-using Azure.Restful.Model.Base;
+﻿using Azure.Restful.Model.Base;
+using Azure.Restful.Model.Storage;
+using System;
+using System.Collections.Generic;
 
 namespace Azure.Restful.Model.AffinityGroup
 {
@@ -11,5 +13,7 @@ namespace Azure.Restful.Model.AffinityGroup
         public string Location { get; set; }
         public List<string> Capabilities { get; set; }
         public List<HostedService> HostedServices { get; set; }
+        public List<StorageService> StorageServices { get; set; }
+        public DateTime CreatedTime { get; set; }
     }
 }

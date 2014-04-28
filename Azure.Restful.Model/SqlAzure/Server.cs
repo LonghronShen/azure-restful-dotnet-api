@@ -1,4 +1,4 @@
-﻿namespace Azure.Restful.Model
+﻿namespace Azure.Restful.Model.SqlAzure
 {
     public class Server
     {
@@ -6,5 +6,6 @@
         public string AdministratorLogin { get; set; }
         public string Location { get; set; }
         public string FullyQualifiedDomainName { get; set; }
+        public string Version { get; set; }
     }
 }

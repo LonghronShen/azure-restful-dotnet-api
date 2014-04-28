@@ -1,6 +1,6 @@
-﻿using Azure.Restful.Model;
-using Azure.Restful.Model.StorageService;
-using Azure.Restful.Common;
+﻿using Azure.Restful.Common;
+using Azure.Restful.Model;
+using Azure.Restful.Model.Storage;
 
 namespace Azure.Restful.Provider
 {

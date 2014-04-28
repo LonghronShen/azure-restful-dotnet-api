@@ -8,6 +8,7 @@ namespace Azure.Restful.Model.Deployment
         public string OsVersion { get; set; }
         public string RoleType { get; set; }
         public List<ConfigurationSet> ConfigurationSets { get; set; }
+        public List<ResourceExtensionReference> ResourceExtensionReferences { get; set; }
         public string AvailabilitySetName { get; set; }
         public List<DataVirtualHardDisk> DataVirtualHardDisks { get; set; }
         public OSVirtualHardDisk OSVirtualHardDisk { get; set; }

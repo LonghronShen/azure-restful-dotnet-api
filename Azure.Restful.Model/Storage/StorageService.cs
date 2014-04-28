@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Azure.Restful.Model.Base;
 
-namespace Azure.Restful.Model.StorageService
+namespace Azure.Restful.Model.Storage
 {
     public class StorageService
     {

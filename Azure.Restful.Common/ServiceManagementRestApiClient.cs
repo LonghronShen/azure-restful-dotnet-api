@@ -35,7 +35,7 @@ namespace Azure.Restful.Common
 
         protected override string ApiVersion
         {
-            get { return "2013-11-01"; }
+            get { return "2014-04-01"; }
         }
     }
 }

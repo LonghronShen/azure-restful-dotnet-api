@@ -81,6 +81,11 @@
     <Compile Include="Base\ExtendedProperty.cs" />
     <Compile Include="Deployment\ConfigurationSet.cs" />
     <Compile Include="Deployment\CertificateSetting.cs" />
+    <Compile Include="Deployment\FormattedMessage.cs" />
+    <Compile Include="Deployment\GuestAgentStatus.cs" />
+    <Compile Include="Deployment\ResourceExtensionParameterValue.cs" />
+    <Compile Include="Deployment\ResourceExtensionReference.cs" />
+    <Compile Include="Deployment\ResourceExtensionStatus.cs" />
     <Compile Include="Deployment\StoredCertificateSettings.cs" />
     <Compile Include="Deployment\DataVirtualHardDisk.cs" />
     <Compile Include="Deployment\Deployment.cs" />
@@ -112,9 +117,9 @@
     <Compile Include="RequestInfo.cs" />
     <Compile Include="SqlAzure\ServiceResource.cs" />
     <Compile Include="SqlAzure\Server.cs" />
-    <Compile Include="StorageService\StorageService.cs" />
-    <Compile Include="StorageService\StorageServiceKeys.cs" />
-    <Compile Include="StorageService\StorageServiceProperties.cs" />
+    <Compile Include="Storage\StorageService.cs" />
+    <Compile Include="Storage\StorageServiceKeys.cs" />
+    <Compile Include="Storage\StorageServiceProperties.cs" />
     <Compile Include="SubscriptionAccount.cs" />
     <Compile Include="Subscription\Subscription.cs" />
     <Compile Include="Networking\AddressSpace.cs" />

@@ -1,5 +1,5 @@
 ﻿
-namespace Azure.Restful.Model.StorageService
+namespace Azure.Restful.Model.Storage
 {
     public class StorageServiceKeys
     {
