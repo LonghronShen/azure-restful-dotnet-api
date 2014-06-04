@@ -10,5 +10,6 @@
         public string Protocol { get; set; }
         public string Vip { get; set; }
         public string EnableDirectServerReturn { get; set; }
+        public EndpointAcl EndpointAcl { get; set; }
     }
 }

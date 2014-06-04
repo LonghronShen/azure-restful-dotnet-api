@@ -1,4 +1,5 @@
-﻿using Azure.Restful.Model.Base;
+﻿using System;
+using Azure.Restful.Model.Base;
 
 namespace Azure.Restful.Model.Disk
 {
@@ -14,6 +15,7 @@ namespace Azure.Restful.Model.Disk
         public string Name { get; set; }
         public string SourceImageName { get; set; }
         public bool IsPremium { get; set; }
+        public DateTime CreatedTime { get; set; }
         public string PricingDetailLink { get; set; }
     }
 }

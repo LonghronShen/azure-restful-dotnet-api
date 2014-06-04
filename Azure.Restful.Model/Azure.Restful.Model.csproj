@@ -82,10 +82,12 @@
     <Compile Include="Deployment\ConfigurationSet.cs" />
     <Compile Include="Deployment\CertificateSetting.cs" />
     <Compile Include="Deployment\FormattedMessage.cs" />
-    <Compile Include="Deployment\GuestAgentStatus.cs" />
+    <Compile Include="Deployment\EndpointAcl.cs" />
+    <Compile Include="Deployment\Rule.cs" />
     <Compile Include="Deployment\ResourceExtensionParameterValue.cs" />
-    <Compile Include="Deployment\ResourceExtensionReference.cs" />
     <Compile Include="Deployment\ResourceExtensionStatus.cs" />
+    <Compile Include="Deployment\ResourceExtensionReference.cs" />
+    <Compile Include="Deployment\GuestAgentStatus.cs" />
     <Compile Include="Deployment\StoredCertificateSettings.cs" />
     <Compile Include="Deployment\DataVirtualHardDisk.cs" />
     <Compile Include="Deployment\Deployment.cs" />
